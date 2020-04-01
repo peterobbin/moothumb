@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>动物森友会 大头菜价格预测工具</title>
+  <title>Animal Crossing: New Horizons Turnip Price Predictor</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,67 +19,68 @@
 
 <body onload="onBodyLoad();">
   <header>
-    <h1>动物森友会 大头菜价格预测工具</h1>
-    <p>【投资有风险 入市需谨慎 本工具结果仅供参考】 本工具翻译自<a href="https://github.com/juo6442/moothumb">moothumb</a></p>
-    <noscript><p>请启用JavaScript以正常显示页面</p></noscript>
+    <h1>moothumb</h1>
+    <h2>Animal Crossing: New Horizons Turnip Price Predictor</h2>
+    <p>The result from this tool is for reference only. Use it at your own risk. This tool is a translation of <a href="https://github.com/juo6442/moothumb">moothumb</a>. <a href="https://github.com/nathan21hz/moothumb">nathan21hz's translation</a> was referenced as well.</p>  
+    <noscript><p>Please enable Javascript.</p></noscript>
   </header>
 
   <section id="content">
     <section id="priceInput">
-      <h2>输入价格</h2>
+      <h2>Input Turnip Prices</h2>
       <form name="priceInputForm">
         <section>
-          <label for="inlineInput">便捷输入:</label><br />
+          <label for="inlineInput">Quick input:</label><br />
           <input type="text" id="inlineInput" name="inlineInput" maxlength="70">
-          <input type="button" value="预测" onClick="onInlinePredictionButtonClick()">
-          <p class="tip">例如: 99 110/122 133/ 62/54 98/69 64</p>
+          <input type="button" value="Predict" onClick="onInlinePredictionButtonClick()">
+          <p class="tip">Quick input format: 99 110/122 133/ 62/54 98/69 64</p>
         </section>
         <section>
           <table>
             <thead>
               <tr>
                 <th></th>
-                <th>上午 / 下午</th>
+                <th>AM / PM</th>
               </tr>
             </thead>
             <tbody id="priceInputTableBody">
               <tr>
-                <th><label for="purchasePrice">购入价格</label></th>
+                <th><label for="purchasePrice">Sunday price</label></th>
                 <td><input type="number" id="purchasePrice" name="price" class="price" min="0" max="2000"></td>
               </tr>
             </tbody>
           </table>
         </section>
-        <input type="button" value="预测" onClick="onPredictionButtonClick();">
-        <input type="reset" value="重置输入">
+        <input type="button" value="Predict" onClick="onPredictionButtonClick();">
+        <input type="reset" value="Reset">
       </form>
     </section>
 
     <section id="predictionResult">
-      <h2>预测结果</h2>
+      <h2>Result</h2>
       <table>
         <thead>
           <tr>
-            <th colspan="2" rowspan="2">走势类型</th>
-            <th rowspan="2">买入价</th>
-            <th colspan="12">价格走势</th>
+            <th colspan="2" rowspan="2">Trend Type</th>
+            <th rowspan="2">Sunday Price from Joan</th>
+            <th colspan="12">Selling Price Trend</th>
           </tr>
           <tr>
-            <th>周一AM</th>
-            <th>周一PM</th>
-            <th>周二AM</th>
-            <th>周二PM</th>
-            <th>周三AM</th>
-            <th>周三PM</th>
-            <th>周四AM</th>
-            <th>周四PM</th>
-            <th>周五AM</th>
-            <th>周五PM</th>
-            <th>周六AM</th>
-            <th>周六PM</th>
+            <th>Monday AM</th>
+            <th>Monday PM </th>
+            <th>Tuesday AM</th>
+            <th>Tuesday PM</th>
+            <th>Wednesday AM</th>
+            <th>Wednesday PM</th>
+            <th>Thursday AM</th>
+            <th>Thursday PM</th>
+            <th>Friday AM</th>
+            <th>Friday PM</th>
+            <th>Saturday AM</th>
+            <th>Saturday PM</th>
           </tr>
           <tr>
-            <th colspan="2">输入值</th>
+            <th colspan="2">Your Input</th>
             <td class="realPrice" />
             <td class="realPrice" />
             <td class="realPrice" />
@@ -100,191 +101,191 @@
     </section>
 
     <section id="advancedSettings">
-      <h2>进阶设置</h2>
+      <h2>Advanced Settings</h2>
       <p>
-        可调整细节参数。如果不清楚，请不要修改。
-        <input type="button" value="显示/隐藏" onClick="onParameterInputToggleButtonClick()">
+         You can tweak the result here. Only do it if you know what it means.
+        <input type="button" value="show/hide" onClick="onParameterInputToggleButtonClick()">
       </p>
       <form name="parameterInputForm">
         <section>
-          <p><label for="tolerance">误差范围：±</label><input type="text" size="3" name="tolerance" value="0">铃钱</p>
-          <label for="parameterPreset">预设：</label>
+          <p><label for="tolerance">tolerance：±</label><input type="text" size="3" name="tolerance" value="0">Bells</p>
+          <label for="parameterPreset">preset：</label>
           <select id="parameterPreset" name="parameterPreset" onchange="onParameterPresetChange()">
-            <option value="acww">欢迎来到动物之森</option>
-            <option value="accf">动物之森 城市人</option>
-            <option value="acnl">来吧！动物之森</option>
+            <option value="acww">Animal Crossing: Wild World</option>
+            <option value="accf">Animal Crossing: City Folks</option>
+            <option value="acnl">Animal Crossing: New Leaf</option>
           </select>
         </section>
         <section id="parameterInput">
           <table>
             <thead>
               <tr>
-                <th>类型</th>
-                <th>阶段</th>
-                <th>变化方式</th>
-                <th>变化范围</th>
+                <th>Type</th>
+                <th>Phase</th>
+                <th>Variation Method</th>
+                <th>Variation Range</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th rowspan="8">波动型</th>
-                <th>上涨</th>
+                <th rowspan="8">Wave</th>
+                <th>Going up</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>连续下跌两次</th>
+                <th>Decline Two Times</th>
                 <td colspan="2" class="transitionDaysCell" />
               </tr>
               <tr>
-                <th>连续下跌两次1期</th>
+                <th>Decline Two Times Phase 1</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>连续下跌两次2期</th>
+                <th>Decline Two Times Phase 2</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>连续下跌三次</th>
+                <th>Decline Three Times</th>
                 <td colspan="2" class="transitionDaysCell" />
               </tr>
               <tr>
-                <th>连续下跌三次1期</th>
+                <th>Decline Three Times Phase 1</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>连续下跌三次2期</th>
+                <th>>Decline Three Times Phase 2</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>连续下跌三次3期</th>
-                <td class="transitionMethodCell" />
-                <td class="transitionAmountCell" />
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <th rowspan="2">连续下跌型</th>
-                <th>周一上午</th>
-                <td class="transitionMethodCell" />
-                <td class="transitionAmountCell" />
-              </tr>
-              <tr>
-                <th>周一下午 ~ 周六下午</th>
+                <th>Decline Three Times Phase 3</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
             </tbody>
             <tbody>
               <tr>
-                <th rowspan="10">3期型</th>
-                <th>周一上午</th>
+                <th rowspan="2">Decline</th>
+                <th>Monday AM</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨前</th>
+                <th>Monday PM ~ Saturday PM</th>
+                <td class="transitionMethodCell" />
+                <td class="transitionAmountCell" />
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th rowspan="10">Phase 3</th>
+                <th>Monday AM</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>开始上涨</th>
+                <th>Before Going Up</th>
+                <td class="transitionMethodCell" />
+                <td class="transitionAmountCell" />
+              </tr>
+              <tr>
+                <th>Starting To Go Up</th>
                 <td colspan="2" class="transitionDaysCell"></td>
               </tr>
               <tr>
-                <th>上涨1期</th>
+                <th>Going Up Phase 1</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨2期</th>
+                <th>Going Up Phase 2</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨3期</th>
+                <th>Going Up Phase 3</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨4期</th>
+                <th>Going Up Phase 4</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨5期</th>
+                <th>Going Up Phase 5</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨6期</th>
+                <th>Going Up Phase 6</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨结束</th>
+                <th>Stopped Going Up</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
             </tbody>
             <tbody>
               <tr>
-                <th rowspan="11">4期型</th>
-                <th>周一上午</th>
+                <th rowspan="11">Phase 4</th>
+                <th>Monday AM</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨前</th>
+                <th>Before Going Up</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>开始上涨</th>
+                <th>Starting To Go Up</th>
                 <td colspan="2" class="transitionDaysCell"></td>
               </tr>
               <tr>
-                <th>上涨1期</th>
+                <th>Going Up Phase 1</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨2期</th>
+                <th>Going Up Phase 2</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨3期</th>
+                <th>Going Up Phase 3</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨4期</th>
+                <th>Going Up Phase 4</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨5期</th>
+                <th>Going Up Phase 5</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨6期</th>
+                <th>Going Up Phase 6</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
-                <th>上涨结束</th>
+                <th>Going Up Phase 7</th>
                 <td class="transitionMethodCell" />
                 <td class="transitionAmountCell" />
               </tr>
               <tr>
                 <td colspan="4">
-                  <label><input type="checkbox" name="fourthPeriodPeak">上涨4期时为最高</label>
+                  <label><input type="checkbox" name="fourthPeriodPeak">Going Up Phase 4 should be the peak</label>
                 </td>
               </tr>
             </tbody>
@@ -296,15 +297,16 @@
 
   <footer>
   	<hr />
-    <p>Github: <a class="footerLink" href="https://github.com/nathan21hz/moothumb">https://github.com/nathan21hz/moothumb</a></p>
+    
     <hr />
-    <p>原作者信息</p>
+    <p>Original Authors</p>
     <address>
       <p>Twitter: <a class="footerLink" href="https://twitter.com/juo6442">@juo6442</a></p>
       <p>E-mail: <a class="footerLink" href="mailto:juo6442@gmail.com?subject=[뭇썸 문의]">juo6442@gmail.com</a>
     </address>
-    <p>Github: <a class="footerLink" href="https://github.com/juo6442/moothumb">https://github.com/juo6442/moothumb</a></p>
+    <p>KR Github: <a class="footerLink" href="https://github.com/juo6442/moothumb">https://github.com/juo6442/moothumb</a></p>
     <p>とびカブ: <a class="footerLink" href="http://tobikabu.web.fc2.com/">http://tobikabu.web.fc2.com/</a></p>
+    <p>CN Github: <a class="footerLink" href="https://github.com/nathan21hz/moothumb">https://github.com/nathan21hz/moothumb</a></p>
   </footer>
 </body>
 

@@ -1,10 +1,10 @@
 const minInput = 0;
 const maxInput = 2000;
 
-const waveTypeName = '波动型';
-const fallingTypeName = '连续下跌型';
-const thirdPeriodTypeName = '3期型';
-const fourthPeriodTypeName = '4期型';
+const waveTypeName = 'Wave';
+const fallingTypeName = 'Decline';
+const thirdPeriodTypeName = 'Phase 3';
+const fourthPeriodTypeName = 'Phase 4';
 
 const selectableDays = [
     Days.MON1, Days.MON2,
@@ -261,7 +261,7 @@ function buildPriceInputTable() {
     const priceInputHtml = '<input type="number" name="price" class="price" '
             + 'min="' + minInput + '" max="' + maxInput + '">';
 
-    for (let day of ["周一", "周二", "周三", "周四", "周五", "周六"]) {
+    for (let day of ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]) {
         let insertedRow = tableBody.insertRow(-1);
 
         let headerCell = document.createElement('th');
@@ -282,23 +282,23 @@ function buildParameterInputTable() {
 function buildTransitionMethodInputs() {
     const transitionMethods = [
         {
-            name: '价格（铃钱）',
+            name: 'Price(Bells)',
             value: Method.PRICE,
         },
         {
-            name: '本次价格 - 上次价格（铃钱）',
+            name: 'Current Price - Last Price(Bells)',
             value: Method.PREV_PRICE_DIFF,
         },
         {
-            name: '本次价格 / 上次价格（%）',
+            name: 'Current Price / Last Price(%)',
             value: Method.PREV_PRICE_RATIO,
         },
         {
-            name: '本次变化幅度 - 上次变化幅度（%）',
+            name: 'Current Price Diff - Last Price Diff（%）',
             value: Method.PREV_PRICE_RATIO_DIFF,
         },
         {
-            name: '本次价格 / 买入价格 (%)',
+            name: 'Last Price / Buying Price (%)',
             value: Method.PURCHASE_PRICE_RATIO,
         },
     ];
@@ -331,12 +331,12 @@ function buildTransitionAmountInputs() {
 function buildTransitionDaysInputs() {
     const transitionDayInputHtml = '<input type="checkbox" name="transitionDay">';
     const days = [
-        '周一上午', '周一下午',
-        '周二上午', '周二下午',
-        '周三上午', '周三下午',
-        '周四上午', '周四下午',
-        '周五上午', '周五下午',
-        '周六上午', '周六下午',
+        'Mon AM', 'Mon PM',
+        'Tue AM', 'Tue PM',
+        'Wed AM', 'Wed PM',
+        'Thu AM', 'Thu PM',
+        'FRI AM', 'FRI PM',
+        'SAT AM', 'SAT PM',
     ];
 
     for (cell of document.getElementsByClassName('transitionDaysCell')) {
@@ -406,12 +406,12 @@ function displayFallingResult(title, result, tableBody) {
 
 function displayNthPeriodResult(title, result, tableBody) {
     const detailedTypes = [
-        '周一上午上涨', '周一下午上涨',
-        '周二上午上涨', '周二下午上涨',
-        '周三上午上涨', '周三下午上涨',
-        '周四上午上涨', '周四下午上涨',
-        '周五上午上涨', '周五下午上涨',
-        '周六上午上涨', '周六下午上涨',
+        'Mon AM Going Up', 'Mon PM Going Up',
+        'Tue AM Going Up', 'Tue PM Going Up',
+        'Wed AM Going Up', 'Wed PM Going Up',
+        'Thu AM Going Up', 'Thu PM Going Up',
+        'Fri AM Going Up', 'Fri PM Going Up',
+        'Sat AM Going Up', 'Sat PM Going Up',
     ];
 
     for (let i = 0; i < result.length; i++) {

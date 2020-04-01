@@ -1,10 +1,12 @@
-# 动物森友会 大头菜价格预测工具
+# Animal Crossing: New Horizons Turnip Price Predictor
 
-本工具翻译自moothumb
+English Version Translated from: 
 
-https://juo6442.github.io/moothumb/
+https://juo6442.github.io/moothumb/  
+https://github.com/nathan21hz/moothumb  
 
-以下为原作者信息
+
+Original Project Info
 
 # moothumb
 

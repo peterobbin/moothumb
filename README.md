@@ -1,3 +1,11 @@
+# 动物森友会 大头菜价格预测工具
+
+本工具翻译自moothumb
+
+https://juo6442.github.io/moothumb/
+
+以下为原作者信息
+
 # moothumb
 
 https://juo6442.github.io/moothumb/
